@@ -1,0 +1,11 @@
+paused-message: "<i><gray><b>Timer Paused"
+time-format: "<green>%02dd:%02dh:%02dm:%02ds"
+
+broadcast:
+  start: "Der Timer wurde <b>gestartet!"
+  pause: "Der Timer wurde <b>pausiert!"
+  resume: "Der Timer wurde <b>fortgesetzt!"
+  stop: "Der Timer wurde <b>gestoppt!"
+  counter: "Der Timer zählt nun <b>Plus!"
+  countdown: "Der Timer zählt nun <b>Minus!"
+  reset: "Der Timer wurde <b>resettet!"
