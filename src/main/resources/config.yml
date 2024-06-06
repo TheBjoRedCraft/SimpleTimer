@@ -1,5 +1,12 @@
-paused-message: "<i><gray><b>Timer Paused"
-time-format: "<green>%02dd:%02dh:%02dm:%02ds"
+#SIMPLETIMER BY THEBJOREDCRAFT
+timer:
+  paused: "<i><gray><b>Timer Paused"
+  prefix: "<gradient:green:dark_green>"
+  suffix:
+    days: " Days - "
+    hours: " Hours - "
+    minutes: " Minutes - "
+    seconds: " Seconds"
 
 broadcast:
   start: "Der Timer wurde <b>gestartet!"

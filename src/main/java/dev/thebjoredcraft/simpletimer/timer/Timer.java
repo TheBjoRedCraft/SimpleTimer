@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.eclipse.aether.util.graph.transformer.SimpleOptionalitySelector;
 
 public class Timer {
     private boolean down;
@@ -109,13 +110,18 @@ public class Timer {
     }
 
     private String formatTime() {
-        String timeFormat = SimpleTimer.getInstance().getConfig().getString("time-format", "");
-
-        return timeFormat
-                .replace("%d", String.valueOf(days)
-                .replace("%h", String.valueOf(hours))
-                .replace("%m", String.valueOf(minutes))
-                .replace("%s", String.valueOf(seconds)));
+        StringBuilder formattedTime = new StringBuilder(SimpleTimer.getInstance().getConfig().getString("timer.prefix", ""));
+        if (days > 0) {
+            formattedTime.append(String.format("%02d" + SimpleTimer.getInstance().getConfig().getString("timer.suffix.days", ""), days));
+        }
+        if (hours > 0 || days > 0) {
+            formattedTime.append(String.format("%02d" + SimpleTimer.getInstance().getConfig().getString("timer.suffix.hours", ""), hours));
+        }
+        if (minutes > 0 || hours > 0 || days > 0) {
+            formattedTime.append(String.format("%02d"  + SimpleTimer.getInstance().getConfig().getString("timer.suffix.minutes", ""), minutes));
+        }
+        formattedTime.append(String.format("%02d"  + SimpleTimer.getInstance().getConfig().getString("timer.suffix.seconds", ""), seconds));
+        return formattedTime.toString();
     }
 
     public boolean isDown() {

@@ -1,12 +1,13 @@
 package dev.thebjoredcraft.simpletimer;
 
 import dev.thebjoredcraft.simpletimer.timer.Timer;
+import dev.thebjoredcraft.simpletimer.timer.TimerCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleTimer extends JavaPlugin {
     private static SimpleTimer instance;
     private static Timer timer;
-    private static final String prefix = "<gray>>> <color:#00ff48>C</color><color:#a2ff00>C</color> <gray>| <color:#3b92d1>";
+    private static final String prefix = "<gray>>> <color:#00ff48>S</color><color:#a2ff00>T</color> <gray>| <color:#3b92d1>";
 
     @Override
     public void onLoad() {
@@ -19,6 +20,8 @@ public final class SimpleTimer extends JavaPlugin {
         timer = new Timer(this);
 
         saveDefaultConfig();
+
+        getCommand("simpletimer").setExecutor(new TimerCommand());
         // Plugin startup logic
 
     }

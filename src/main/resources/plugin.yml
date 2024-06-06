@@ -2,3 +2,13 @@ name: SimpleTimer
 version: '${version}'
 main: dev.thebjoredcraft.simpletimer.SimpleTimer
 api-version: '1.20'
+author: TheBjoRedCraft
+commands:
+  simpletimer:
+    permission-message: You do not have permission for SimpleTimer - simpletimer.command
+    description: The Main Command from Simple Timer.
+    aliases:
+      - timer
+      - stimer
+      - st
+    permission: simpletimer.command
